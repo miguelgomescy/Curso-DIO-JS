@@ -1,0 +1,73 @@
+
+
+.acordeon{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    transition: .35s;
+}
+
+.acordeon .trigger{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+}
+
+.acordeon.open, .acordeon:hover{
+    background-color: #55569E;
+    border-color: #55569E;
+}
+
+.acordeon.open .trigger::after{
+    transform: rotate(180deg);
+
+}
+
+.acordeon .trigger:hover{
+    cursor: pointer;
+
+}
+
+.acordeon .trigger::after{
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: .5s;
+    content: '';
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('/assets/img/button/icon.svg');
+}
+
+.content .trigger::after{
+    content: '';
+    display: inline-block;
+}
+
+.acordeon .content{
+    
+    overflow: hidden;
+    height: 0;
+    transition: .25s ease-in-out ;
+    opacity: 0;
+
+}
+
+.acordeon.open .content{
+    display: block;
+    max-height: 100%;
+    opacity: 1;
+    padding: 1rem;
+
+}

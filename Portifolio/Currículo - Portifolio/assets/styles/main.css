@@ -1,0 +1,164 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,10;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    position: relative;
+}
+
+.header::after{
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(/assets/img/bullets.svg);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+header .photo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.main{
+    padding: .5rem;
+    margin: .5rem;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+}
+
+.main::before{
+    content: '';
+    background-image: url('/assets/img/background/Group\ 49.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    display: inline-block;
+    width: 100vh;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.main::after{
+    content: '';
+    background-image: url('/assets/img/background/Group\ 49.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    display: inline-block;
+    width: 100vh;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(180deg);
+
+}
+
+header .title{
+    text-align: center;
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.information p{
+    margin: .5rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.information p::before{
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: .5rem;
+}
+
+.information .people::before{
+    background-image: url('/assets/img/people.svg');
+}
+
+.information .pin::before{
+    background-image: url('/assets/img/pin.svg');
+}
+
+.information .whatsapp::before{
+    background-image: url('/assets/img/whatsapp.svg');
+}
+
+.information .email::before{
+    background-image: url('/assets/img/email.svg');
+}
+
+
+@media only screen and (min-width:768px ){
+
+    header{
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information";
+    }
+
+    header .photo{
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    header .title{
+        grid-area: title;
+        text-align: start;
+        max-width: 210px;
+    }
+
+    header .information{
+       grid-area: information;
+    }
+    
+}
+
+@media only screen and (min-width:768px ){
+    .main{
+        max-width: 1024px;
+        margin: 1rem auto;
+    }
+
+    .email::before, 
+    .main::after{
+        width: 70vh;
+    }
+
+    
+}
